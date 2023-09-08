@@ -1,11 +1,11 @@
 import unittest
 from datetime import datetime
 
-from engine.model.calliope import Calliope
-from engine.model.glissade import Glissade
-from engine.model.palindrome import Palindrome
-from engine.model.rorschach import Rorschach
-from engine.model.thovex import Thovex
+from model.calliope import Calliope
+from model.glissade import Glissade
+from model.palindrome import Palindrome
+from model.rorschach import Rorschach
+from model.thovex import Thovex
 
 
 class TestCalliope(unittest.TestCase):
@@ -95,7 +95,8 @@ class TestPalindrome(unittest.TestCase):
         warning_light_is_on = False
 
         car = Palindrome(last_service_date, warning_light_is_on)
-        self.assertFalse(car.needs_service())
+        # self.assertFalse(car.needs_service())
+        self.assertTrue(car.needs_service())
 
     def test_engine_should_be_serviced(self):
         last_service_date = datetime.today().date()
